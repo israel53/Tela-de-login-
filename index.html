@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Login Boostrap</title>
+</head>
+<body>
+    <body class="bg-dark">
+        <section class="container-fluid">
+          <div class="vh-100 d-flex justify-content-center align-items-center">
+          <form class="bg-secondary p-5 rounded">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light text-uppercase fw-semibold">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label text-light text-uppercase fw-semibold">Senha</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+              <div id="emailHelp" class="form-text text-black-50">Seus dados pessoais são protegidos por criptografia de ponta a ponta,não temos acesso a eles</div>
+            </div>
+            <div id="liveAlertPlaceholder"></div>
+            <button type="button" class="btn btn-success w-100 mb-2" id="liveAlertBtn">Confirmar</button>
+            <button type="reset" class="btn btn-danger w-100 mt-2">Reset</button>
+          </form>
+        </div>
+        </section>
+</body>
+<script>
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+  
+  const alert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder.append(wrapper)
+  }
+  
+  const alertTrigger = document.getElementById('liveAlertBtn')
+  if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+      alert('Você está Logado!', 'success')
+    })
+  }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</html>
